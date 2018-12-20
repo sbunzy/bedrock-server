@@ -11,7 +11,7 @@ Docker-compose:
     container_name: bedrock
     restart: always
     ports:
-      - 19132:19132
+      - 19132:19132/udp
     volumes:
       - /home/docker/bedrock/worlds:/bedrock-server/worlds
       - /home/docker/bedrock/server.properties:/bedrock-server/server.properties
