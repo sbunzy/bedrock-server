@@ -6,7 +6,7 @@ This Dockerfile will download the Bedrock Server app and set it up, along with i
 If you run the container as is, the `worlds` directory will be created inside the container, which is unadvisable. It is highly recommended that you store your worlds outside the container using a mount. It is also likely that you will want to customize your `server.properties` file. The best way to do this is also using a `server.properties` file outside the container using a mount.
 
 Docker-compose:
-  bedrock:
+  
     image: bunzy/minecraft-bedrock-server
     container_name: bedrock
     restart: always
