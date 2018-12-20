@@ -6,6 +6,8 @@ RUN curl https://minecraft.azureedge.net/bin-linux/bedrock-server-1.7.0.13.zip -
 RUN unzip bedrock-server.zip -d bedrock-server
 RUN rm bedrock-server.zip
 
+EXPOSE 19132/udp
+
 WORKDIR /bedrock-server
 ENV LD_LIBRARY_PATH=.
 CMD ./bedrock_server
