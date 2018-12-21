@@ -6,15 +6,15 @@ RUN curl https://minecraft.azureedge.net/bin-linux/bedrock-server-1.7.0.13.zip -
 RUN unzip bedrock-server.zip -d bedrock-server
 RUN rm bedrock-server.zip
 
-RUN mkdir /bedrock-server/config && \
-    mv /bedrock-server/server.properties /bedrock-server/config && \
-    touch /bedrock-server/whitelist.json && \
-    touch /bedrock-server/permissions.json && \
-  #  mv /bedrock-server/permissions.json /bedrock-server/config && \
-  #  mv /bedrock-server/whitelist.json /bedrock-server/config && \
-    ln -s /bedrock-server/config/server.properties /bedrock-server/server.properties && \
-    ln -s /bedrock-server/config/permissions.json /bedrock-server/permissions.json && \
-    ln -s /bedrock-server/config/whitelist.json /bedrock-server/whitelist.json
+RUN mkdir /bedrock-server/config 
+RUN mv /bedrock-server/server.properties /bedrock-server/config 
+#RUN touch /bedrock-server/whitelist.json 
+#RUN touch /bedrock-server/permissions.json 
+RUN mv /bedrock-server/permissions.json /bedrock-server/config 
+RUN mv /bedrock-server/whitelist.json /bedrock-server/config 
+RUN ln -s /bedrock-server/config/server.properties /bedrock-server/server.properties 
+RUN ln -s /bedrock-server/config/permissions.json /bedrock-server/permissions.json 
+RUN ln -s /bedrock-server/config/whitelist.json /bedrock-server/whitelist.json
     
 EXPOSE 19132/udp
 
