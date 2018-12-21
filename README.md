@@ -17,7 +17,7 @@ Docker-compose:
 
 
 If you need the oringal properties file:
-docker cp <containerId>:/bedrock-server/backup/server.properties /host/path/target
+docker cp containerId:/bedrock-server/backup/server.properties /host/path/target
 
 
 For white list create the following files in /host/path/target
