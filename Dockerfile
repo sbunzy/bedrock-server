@@ -8,10 +8,10 @@ RUN rm bedrock-server.zip
 
 RUN mkdir /bedrock-server/config && \
     mv /bedrock-server/server.properties /bedrock-server/config && \
-#    mv /bedrock-server/permissions.json /bedrock-server/config && \
-    mv /bedrock-server/whitelist.json /bedrock-server/config && \
+    touch /bedrock-server/config/whitelist.json && \
+    touch /bedrock-server/whitelist.json && \
     ln -s /bedrock-server/config/server.properties /bedrock-server/server.properties && \
-#    ln -s /bedrock-server/config/permissions.json /bedrock-server/permissions.json && \
+    ln -s /bedrock-server/config/permissions.json /bedrock-server/permissions.json && \
     ln -s /bedrock-server/config/whitelist.json /bedrock-server/whitelist.json
     
 EXPOSE 19132/udp
