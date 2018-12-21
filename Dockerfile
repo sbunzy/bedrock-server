@@ -6,11 +6,17 @@ RUN curl https://minecraft.azureedge.net/bin-linux/bedrock-server-1.7.0.13.zip -
 RUN unzip bedrock-server.zip -d bedrock-server
 RUN rm bedrock-server.zip
 
-RUN mkdir /bedrock-server/config 
+RUN mkdir /bedrock-server/config && \
+    mv /bedrock-server/server.properties /bedrock-server/config && \
+    ln -s /bedrock-server/config/server.properties /bedrock-server/server.properties && \
+    touch /bedrock-server/config/whitelist.json && \
+    ln -s /bedrock-server/config/whitelist.json /bedrock-server/whitelist.json
+    
+#RUN mkdir /bedrock-server/config 
 #RUN mv /bedrock-server/server.properties /bedrock-server/config 
-RUN cp /bedrock-server/server.properties /bedrock-server/config
-RUN touch /bedrock-server/config/whitelist.json 
-RUN touch /bedrock-server/config/permissions.json 
+#RUN cp /bedrock-server/server.properties /bedrock-server/config
+#RUN touch /bedrock-server/config/whitelist.json 
+#RUN touch /bedrock-server/config/permissions.json 
 #RUN ln -s /bedrock-server/config/server.properties /bedrock-server/server.properties 
 #RUN ln -s /bedrock-server/config/permissions.json /bedrock-server/permissions.json 
 #RUN ln -s /bedrock-server/config/whitelist.json /bedrock-server/whitelist.json
