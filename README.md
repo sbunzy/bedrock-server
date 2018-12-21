@@ -14,7 +14,7 @@ Docker-compose:
       - 19132:19132/udp
     volumes:
       - /home/docker/bedrock/worlds:/bedrock-server/worlds
-      - /home/docker/bedrock/server.properties:/bedrock-server/server.properties
+      - /home/docker/bedrock/config:/bedrock-server/config
 
 If you wanted to use custom resource packs, a whitelist, or other things, you could also mount those paths as well. Separating the content from the sever executable means that you can safely destroy your Docker container without losing your world. This will come in handy when there are updates to the server app, and you want to redeploy the container.
 
