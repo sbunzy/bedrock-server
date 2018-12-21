@@ -8,8 +8,8 @@ RUN rm bedrock-server.zip
 
 RUN mkdir /bedrock-server/config && \
     mv /bedrock-server/server.properties /bedrock-server/config && \
-    touch /bedrock-server/config/whitelist.json && \
-    touch /bedrock-server/config/permissions.json && \
+    touch /bedrock-server/whitelist.json && \
+    touch /bedrock-server/permissions.json && \
   #  mv /bedrock-server/permissions.json /bedrock-server/config && \
   #  mv /bedrock-server/whitelist.json /bedrock-server/config && \
     ln -s /bedrock-server/config/server.properties /bedrock-server/server.properties && \
