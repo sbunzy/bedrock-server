@@ -7,23 +7,14 @@ RUN unzip bedrock-server.zip -d bedrock-server
 RUN rm bedrock-server.zip
 
 RUN mkdir /bedrock-server/config && \
-    mv /bedrock-server/server.properties /bedrock-server/config && \
+    mkdir /bedrock-server/backup && \
+    mv /bedrock-server/server.properties /bedrock-server/backup && \
     ln -s /bedrock-server/config/server.properties /bedrock-server/server.properties && \
-    touch /bedrock-server/config/whitelist.json && \
     ln -s /bedrock-server/config/whitelist.json /bedrock-server/whitelist.json
-    
-#RUN mkdir /bedrock-server/config 
-#RUN mv /bedrock-server/server.properties /bedrock-server/config 
-#RUN cp /bedrock-server/server.properties /bedrock-server/config
-#RUN touch /bedrock-server/config/whitelist.json 
-#RUN touch /bedrock-server/config/permissions.json 
-#RUN ln -s /bedrock-server/config/server.properties /bedrock-server/server.properties 
-#RUN ln -s /bedrock-server/config/permissions.json /bedrock-server/permissions.json 
-#RUN ln -s /bedrock-server/config/whitelist.json /bedrock-server/whitelist.json
     
 EXPOSE 19132/udp
 
-#VOLUME /bedrock-server/worlds /bedrock-server/config
+VOLUME /bedrock-server/worlds /bedrock-server/config
 
 WORKDIR /bedrock-server
 ENV LD_LIBRARY_PATH=.
