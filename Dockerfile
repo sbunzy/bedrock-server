@@ -9,6 +9,7 @@ RUN rm bedrock-server.zip
 RUN mkdir /bedrock-server/config && \
     mkdir /bedrock-server/backup && \
     mv /bedrock-server/server.properties /bedrock-server/backup && \
+    mv /bedrock-server/whitelist.json /bedrock-server/backup && \
     ln -s /bedrock-server/config/server.properties /bedrock-server/server.properties && \
     ln -s /bedrock-server/config/whitelist.json /bedrock-server/whitelist.json
     
