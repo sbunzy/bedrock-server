@@ -22,3 +22,6 @@ docker cp containerId:/bedrock-server/backup/server.properties /host/path/target
 
 For white list create the following files in /host/path/target
 whitelist.json
+
+For permissions create the following files in /host/path/target
+permissions.json
